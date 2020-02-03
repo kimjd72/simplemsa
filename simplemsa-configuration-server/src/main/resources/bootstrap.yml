@@ -1,5 +1,7 @@
 server:
   port: 9000
 spring:
+  application:
+    name: configuration-server
   profiles:
     active: native,local
