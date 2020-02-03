@@ -1,0 +1,13 @@
+# member-service
+server:
+  port: 8080
+spring:
+  profiles:
+    active: local
+  application:
+    name: member-service
+management:
+  endpoints:
+    web:
+      exposure:
+        include: info, refresh

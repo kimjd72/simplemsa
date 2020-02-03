@@ -1,0 +1,4 @@
+# member-service-alpha.yml
+spring:
+  profiles: alpha
+  message: Hello Spring MemberService Alpha Server!!!!!(alpha - github)

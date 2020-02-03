@@ -1,0 +1,4 @@
+# member-service-local.yml
+spring:
+  profiles: local
+  message: Hello Spring MemberService Local Server!!!!!

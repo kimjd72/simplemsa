@@ -1,0 +1,71 @@
+buildscript {
+    ext {
+        springBootVersion = '2.1.12.RELEASE'
+    }
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+        classpath "io.spring.gradle:dependency-management-plugin:1.0.8.RELEASE"
+    }
+
+}
+
+allprojects {
+    group 'org.example'
+    version '1.0-SNAPSHOT'
+}
+
+subprojects {
+    apply plugin: 'java'
+    apply plugin: 'org.springframework.boot'
+    apply plugin: 'io.spring.dependency-management'
+
+    sourceCompatibility = 1.8
+
+    repositories {
+        mavenCentral()
+    }
+
+    ext {
+        set('springCloudVersion', "Greenwich.SR4")
+    }
+
+    dependencies {
+        testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    }
+
+    dependencyManagement {
+        imports {
+            mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+        }
+    }
+}
+
+project(':simplemsa-configuration-server') {
+    dependencies {
+        implementation 'org.springframework.cloud:spring-cloud-config-server'
+        testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    }
+}
+
+project(':simplemsa-gateway-router') {
+    dependencies {
+    }
+}
+
+project(':simplemsa-service-discovery') {
+    dependencies {
+    }
+}
+
+project(':simplemsa-member-service') {
+    dependencies {
+    }
+}
+
+project(':simplemsa-contents-service') {
+    dependencies {
+    }
+}
