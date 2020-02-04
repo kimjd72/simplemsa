@@ -27,13 +27,10 @@ https://comnic.tistory.com/23                                                   
 * 서비스appliction의 설정(*.properties)을 관리할 수 있다.
 * dependency : spring-cloud-config-server
 ```
-
 #### Service Application 구성 
 ```
 * cloud.config.uri: http://localhost:9000 # Configuration Server Application
 ```
-
-
 ## Spring Cloud MSA(2) – Gateway(Routing & Filter) Server by Netflix zuul
 #### Configuration 서버에 Gateway Router 설정 추가
 ```
@@ -42,7 +39,6 @@ https://comnic.tistory.com/23                                                   
 	${user.home}/server-configs/zuul-gateway-local.yml
 * alpha 환경 설정 추가
 ```
+## Spring Cloud MSA(3) – Service Discovery by Eureka
 
-
--------------------------- Spring Cloud MSA(2) – Gateway(Routing & Filter) Server by Netflix zuul
-
+## 마이크로 서비스 간 호출 - Feign
