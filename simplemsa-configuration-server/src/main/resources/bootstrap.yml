@@ -5,3 +5,11 @@ spring:
     name: configuration-server
   profiles:
     active: native,local
+eureka:
+  client:
+    registryFetchIntervalSeconds: 5
+    enabled: true
+    serviceUrl:
+      defaultZone: ${EUREKA_URI:http://localhost:8761/eureka}
+  instance:
+    preferIpAddress: true
